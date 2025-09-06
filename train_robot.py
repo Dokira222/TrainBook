@@ -39,7 +39,7 @@ train_no = WebDriverWait(driver, 5).until(
     EC.presence_of_element_located((By.CSS_SELECTOR, ".form-control.input-small.trainNoList.train1"))
 )
 
-id_num.send_keys("M123056298") # 輸入身分證號碼
+id_num.send_keys("A123456789") # 輸入身分證號碼
 start_station.send_keys("7000") # 輸入出發站代碼
 end_station.send_keys("3300") # 輸入目的地站代碼
 date_from_today = 3 # 預計出發日-今天日期
@@ -111,4 +111,5 @@ pay_button.click()
 print("已送出付款")
 
 #time.sleep(1)
+
 
