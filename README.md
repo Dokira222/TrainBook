@@ -1,7 +1,7 @@
 # TrainBook
 台鐵火車自動訂票
 
-#1.在windows快速搜尋cmd並按ENTER#
+**1.在windows快速搜尋cmd並按ENTER**<br>
 **2.輸入pip install selenium** <br>
 **3.須找出和本身Chrome相同版本的chromedriver**<br>
 **3.1打開chrome**<br>
