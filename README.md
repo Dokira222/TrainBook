@@ -9,7 +9,7 @@
 **3.3 找到版本號**<br>
 **3.4 (https://developer.chrome.com/docs/chromedriver/downloads?hl=zh-tw)[點這裡]**<br>
 **3.5 找到自己的版本號，若本身版本很高，左邊有115以上的版本**<br>
-**3.6 windows系統下載win32**<br>
+**3.6 windows系統下載win32或是64根據版本位元來看**<br>
 **3.7 複製其連結網址，貼到搜尋欄，ENTER即下載**<br>
 **3.8 在D:/槽創建一個train_robot，把下載chromedriver放入**<br>
 **4. 在文字編譯器打開train_robot.py**<br>
