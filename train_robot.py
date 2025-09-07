@@ -2,17 +2,13 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import Select
 import time
-import pandas as pd
-import os
-import wget
 
 # 設定 Chrome 選項
-PATH = "D:/program/spider/tos_data/chromedriver.exe"
+PATH = "D:/train_robot/chromedriver.exe"
 service = Service(PATH)
 driver = webdriver.Chrome(service=service)
 driver.get("https://www.railway.gov.tw/tra-tip-web/tip/tip001/tip121/query")
@@ -38,17 +34,20 @@ date = WebDriverWait(driver, 5).until(
 train_no = WebDriverWait(driver, 5).until(
     EC.presence_of_element_located((By.CSS_SELECTOR, ".form-control.input-small.trainNoList.train1"))
 )
-
-id_num.send_keys("A123456789") # 輸入身分證號碼
+# ----輸入資料
+id_num.send_keys("X333333333") # 輸入身分證號碼
 start_station.send_keys("7000") # 輸入出發站代碼
 end_station.send_keys("3300") # 輸入目的地站代碼
-date_from_today = 3 # 預計出發日-今天日期
+train_no.send_keys("271") # 輸入車次
+date_from_today = 3 # 預計出發日-今天日期(不大於30天)
+# ----輸入資料結束
+
 date.click() # 點擊日期選擇器
 for day in range(date_from_today):
     date.send_keys(Keys.ARROW_RIGHT) # 按下鍵盤向下鍵
 date.send_keys(Keys.ENTER) # 按下鍵盤 Enter 鍵
 
-train_no.send_keys("271") # 輸入車次
+
 
 
 
@@ -59,11 +58,13 @@ iframe = WebDriverWait(driver, 15).until(
 )
 driver.switch_to.frame(iframe)
 
+# ---手動處理驗證碼---
 # 點選 checkbox
 checkbox = WebDriverWait(driver, 30).until(
     EC.element_to_be_clickable((By.ID, "recaptcha-anchor"))
 )
 print("請手動完成驗證（無時間限制）")
+# ---手動處理驗證碼結束---
 
 # 等待驗證完成（檢查 aria-checked 屬性是否為 true）
 while True:
@@ -109,7 +110,5 @@ pay_button = WebDriverWait(driver, 10).until(
 )
 pay_button.click()
 print("已送出付款")
-
-#time.sleep(1)
 
 
