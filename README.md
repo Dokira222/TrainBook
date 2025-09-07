@@ -7,4 +7,4 @@
 ##3.1打開chrome##
 ##3.2點擊右上角⋮、說明、關於google chrome##
 ##3.3找到版本號##
-##(點這裡)[https://developer.chrome.com/docs/chromedriver/downloads?hl=zh-tw]##
+##(https://developer.chrome.com/docs/chromedriver/downloads?hl=zh-tw)[點這裡]##
