@@ -1,5 +1,6 @@
 # TrainBook
-台鐵火車自動訂票
+台鐵火車自動訂票<br>
+**純研究用途，嚴斥不正當用途**
 
 **1. 在windows快速搜尋cmd並按ENTER**<br>
 **2. 輸入pip install selenium** <br>
